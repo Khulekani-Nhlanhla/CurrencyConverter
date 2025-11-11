@@ -28,5 +28,15 @@ public class CurrencyConverter extends JFrame implements ActionListener {
             "MYR", "KRW", "THB", "IDR", "VND"
     };
 
+    public CurrencyConverter() {
+        setTitle("Currency Converter");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(500, 400);
+        setLayout(new BorderLayout(10, 10));
+
+        initializeComponents();
+        setupLayout();
+        setVisible(true);
+    }
 
 }
