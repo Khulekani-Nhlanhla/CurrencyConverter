@@ -72,5 +72,58 @@ public class CurrencyConverter extends JFrame implements ActionListener {
         timeLabel.setForeground(Color.GRAY);
 
     }
+    private void setupLayout() {
+        //MAIN PANEL WITH PADDING
+        JPanel mainPanel = new JPanel(new GridBagLayout());
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(10, 10, 10, 10);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+
+        //FROM CURRENCY ROW
+        gbc.gridx = 0; gbc.gridy = 0;
+        mainPanel.add(new JLabel("From:"), gbc);
+
+        gbc.gridx = 1;
+        mainPanel.add(fromCurrencyCombo, gbc);
+
+        //AMOUNT ROW
+        gbc.gridx = 0; gbc.gridy = 1;
+        mainPanel.add(new JLabel("Amount:"), gbc);
+
+        gbc.gridx = 1;
+        mainPanel.add(amountField, gbc);
+
+        //TO CURRENCY ROW
+        gbc.gridx = 0; gbc.gridy = 2;
+        mainPanel.add(new JLabel("To:"), gbc);
+
+        gbc.gridx = 1;
+        mainPanel.add(toCurrencyCombo, gbc);
+
+        //RESULT ROW
+        gbc.gridx = 0; gbc.gridy = 3;
+        mainPanel.add(new JLabel("Result:"), gbc);
+
+        gbc.gridx = 1;
+        mainPanel.add(resultField, gbc);
+
+        //BUTTON ROW
+        gbc.gridx = 0; gbc.gridy = 4;
+        gbc.gridwidth = 2;
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.CENTER;
+
+        JPanel buttonPanel = new JPanel(new FlowLayout());
+        buttonPanel.add(convertButton);
+        buttonPanel.add(swapButton);
+        mainPanel.add(buttonPanel, gbc);
+
+        //TIME LABEL
+        gbc.gridy = 5;
+        mainPanel.add(timeLabel, gbc);
+
+        add(mainPanel, BorderLayout.CENTER);
+    }
 
 }
